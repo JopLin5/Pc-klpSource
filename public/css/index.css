@@ -1,0 +1,196 @@
+body{
+    margin:0;
+    padding:0;
+    background-color:#F3F3F3;
+}
+img{
+    border:0;
+}
+.page_nav{
+    width:1200px;
+    margin:0 auto;
+    overflow: hidden;
+    padding-right:19px;
+    margin-bottom:50px;
+    text-align: center;
+}
+.page_nav ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    display: inline-block;
+    overflow: hidden;
+}
+.page_nav ul li{
+    border:1px solid #dddddd;
+    float:left;
+    width:30px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    margin:0 2px;
+    border-radius: 5px;
+    background-color:white;
+}
+.page_nav ul li a{
+    text-decoration: none;
+    color:black;
+}
+/*主要*/
+.main{
+    width:1200px;
+    margin:0 auto;
+    margin-top:50px;
+    overflow: hidden;
+    position: relative;
+}
+.main .food-goods{
+    width:220px;
+    height:250px;
+    background-color: white;
+    margin-right:19px; 
+    margin-bottom:50px;
+    padding:10px;
+    box-sizing: border-box;
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between; */
+    float:left;
+}
+.main .food-goods .food-img{
+  
+    width:100%;
+    height:70%;
+    position: relative;
+}
+.main .food-goods .food-img img{
+    width:100%;
+    height:100%;  
+    object-fit: cover;
+}
+.main .smog{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)\9;
+    background:rgba(0, 0, 0, 0.6);
+    display: none;
+}
+.main .food-goods .food-price{
+    font-size:20px;
+    margin-top:10px;
+    height:30px;
+    line-height: 30px;
+
+}
+.main .food-goods .food-price .price{
+    color:#CC3300;
+    font-weight: bold;
+}
+.main .food-goods .food-price p{
+    margin:0;
+}
+.main .food-title{
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    margin-top:10px;
+    overflow: hidden;
+}
+.main .price{
+    float:left;
+}
+.main .liulan{
+    float:right;
+}
+.main .food-goods .food-price .liulan{
+    color:#dddddd;
+    font-size:16px;
+}
+.main .food-img:hover .smog{
+    display: block;
+}
+.zh-page{height:50px;padding: 0 29px;text-align: right;width:1200px;margin: 20px auto;box-sizing: border-box}
+.zh-page ul{height: 20px;list-style:none;position: relative;right:0;float:right}
+.zh-page ul li{float: left;height: 20px;line-height: 20px;margin: 0 3px;color: black;font-size: 20px;}
+.zh-page ul li a{height: 100%;min-width: 10px;border-radius: 10px;padding: 0 5px;color: black;}
+.zh-page ul .zh-cur a{color: #d03e3f;}
+.zh-page .zh-icon-prev,
+.zh-page .zh-icon-next{display: inline-block;width: 0;height: 0;border-style: solid;border-width: 4px 6px;border-color: transparent #858587 transparent transparent;}
+.zh-page .zh-icon-next{border-color: transparent transparent transparent #858587;}
+#goog-gt-tt,.goog-te-spinner-animation{
+    display: none;
+}
+.pager-list {
+    float: right;
+    position: relative;
+    font-size: 10pt;
+}
+ 
+    .pager-list > .pager {
+        display: block;
+        position: relative;
+    }
+    .pager-list ul li {
+        list-style: none;
+        float: left;
+        margin: 0 3px;
+        min-width: 37px;
+    }
+ 
+        .pager-list ul li.next,
+        .pager-list ul li.prev {
+            width: auto;
+        }
+ 
+        .pager-list ul li.disable a {
+            color: #848c94;
+        }
+ 
+        .pager-list ul li.text {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 0px;
+            color: black;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+ 
+            .pager-list ul li.text input.go {
+                width: 25px;
+            }
+            .pager-list ul li.text select.go {
+                padding:2px 2px;
+            }
+            .pager-list ul li.text span.go {
+                color: #848c94;
+                margin-left: 2px;
+                cursor: pointer;
+                background-color: silver;
+                padding: 4px;
+                border-radius: 2px;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+            }
+ 
+        .pager-list ul li a {
+            display: block;
+            /*width: 24px;*/
+            padding: 0 7px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border: 1px solid #848c94;
+            color: black;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+ 
+            .pager-list ul li a:hover,
+            .pager-list ul li.active a {
+                background-color: #b2d1d8;
+            }

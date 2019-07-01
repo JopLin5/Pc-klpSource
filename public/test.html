@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>前端播放m3u8格式视频</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/video.min.js"></script>
+    <script src="js/videojs-contrib-hls.js"></script>
+    <script src="js/test.js"></script>
+    <script>   
+var dd =`<video id="myVideo" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="1080" height="708" data-setup='{}'>    
+        <source id="source" src="http://static.klpfood.com/m3u8_155710688451612.m3u8"  type="application/x-mpegURL">
+    </video>`
+   $('#aa').append(dd) 
+</script>
+</head>
+<body>
+    <div id="aa">
+
+    </div>
+    
+</body>
+
+</html>

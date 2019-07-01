@@ -1,0 +1,14 @@
+.anjian_main{
+    width:1200px;
+    margin:0 auto;
+    padding:20px 0;
+    text-align: center;
+}
+.anjian_main img{
+    width:60%;
+}
+.anjian_main ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}

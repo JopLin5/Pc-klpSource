@@ -1,0 +1,63 @@
+.footer{
+    width:100%;
+    position: relative;
+    bottom:0;
+    background-color:white; 
+    padding-top:10px;
+}
+.footer .footer-top{
+    width:1200px;
+    margin:35px auto;
+    overflow: hidden;
+}
+.footer .footer-top .wechat{
+    width:60%;
+    float:left;
+    border-right:1px solid black;
+    padding-right:54px;
+    text-align: center;
+}
+.footer .footer-top .wechat div{
+    float: right;
+    padding-right:54px;
+}
+
+.footer .footer-bottom{
+    width:100%;
+    height:100px;
+    line-height: 100px;
+    background-color:#3F3E3E;
+}
+.footer .miniprogram img,.footer .public_address img{
+    width:162px;
+    height:162px;
+}
+.footer .footer-top_phone{
+    width:30%;
+    margin-left:54px;
+    float:right;
+}
+.footer .footer-top_phone ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+.footer .footer-top_phone ul li{
+    margin:10px 0;
+}
+.footer .footer-top_phone ul li:first-child{
+  
+    font-size:28px;
+    font-weight: bold;
+    margin:20px 0;
+}
+.footer .footer-bottom p{
+    color:#B1B1B1;
+    text-align:center;  
+    white-space: nowrap;
+}
+.footer .footer-bottom a{
+    color:#999999;
+    margin:0 10px;
+    text-decoration: none;
+}

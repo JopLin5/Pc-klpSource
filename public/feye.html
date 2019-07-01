@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>Document</title>
+    <style>
+.zh-page{height: 20px;padding: 20px 0;text-align: right;}
+.zh-page ul{height: 20px;list-style:none;}
+.zh-page ul li{float: left;height: 20px;line-height: 20px;margin: 0 3px;color: black;font-size: 14px;}
+.zh-page ul li a{display: block;height: 100%;min-width: 10px;border-radius: 10px;padding: 0 5px;color: black;}
+.zh-page ul .zh-cur a{color: #1c1c1c;}
+.zh-page .zh-icon-prev,
+.zh-page .zh-icon-next{display: inline-block;width: 0;height: 0;border-style: solid;border-width: 4px 6px;border-color: transparent #858587 transparent transparent;}
+.zh-page .zh-icon-next{border-color: transparent transparent transparent #858587;}
+</style>
+</head>
+<body>
+        <div class="zh-page zh-align-center">
+                <ul>
+                    <!-- <li class="zh-prev"><a href="###"><span class="zh-icon-prev"></span></a></li>
+                    <li class="zh-cur"><a href="###">1</a></li>
+                    <li><a href="###">2</a></li>
+                    <li><a href="###">3</a></li>
+                    <li><a href="###">4</a></li>
+                    <li><a href="###">5</a></li>
+                    <li class="zh-ellipsis">...</li>
+                    <li class="zh-cur"><a href="###">20</a></li>
+                    <li class="zh-next"><a href="###"><span class="zh-icon-next"></span></a></li>
+                    <li class="zh-total">共21页</li> -->
+                </ul>
+            </div>
+            <script>
+            $.extend({
+    // ajax分页
+    page: function(options) {
+        var defaults = {
+            'visiblePages': 6 // 可见页码(不能小于4)
+        };
+        var opts = $.extend({}, defaults, options);
+        var curPage = opts.curPage;
+        // 创建分页列表
+        function createPageList(curPage) {
+            var li = '<li class="zh-prev"><a href="###"><span class="zh-icon-prev"></span></a></li>';
+            if(opts.totalPages <= opts.visiblePages) { // 总页数<=可见页
+                for(var i=1; i<=opts.totalPages; i++) {
+                    if(curPage == i) {
+                        li += '<li class="zh-cur"><a href="###">'+i+'</a></li>';
+                    } else {
+                        li += '<li><a href="###">'+i+'</a></li>';
+                    }
+                }
+            } else { // 总页数>可见页
+                if(curPage < opts.visiblePages-1) { // 当前页<可见页-1
+                    for(var i=1; i<=opts.visiblePages-1; i++) {
+                        if(curPage == i) {
+                            li += '<li class="zh-cur"><a href="###">'+i+'</a></li>';
+                        } else {
+                            li += '<li><a href="###">'+i+'</a></li>';
+                        }
+                    }
+                    li += '<li class="zh-ellipsis">...</li>';
+                    li += '<li><a href="###">'+opts.totalPages+'</a></li>';
+                } else if(curPage >= opts.visiblePages-1) {  // 当前页>=可见页-1
+                    if(opts.totalPages-curPage <= opts.visiblePages-4) { // 能连到结束
+                        li += '<li><a href="###">1</a></li>';
+                        li += '<li class="zh-ellipsis">...</li>';
+                        for(var i=opts.totalPages-(opts.visiblePages-2); i<=opts.totalPages; i++) {
+                            if(curPage == i) {
+                                li += '<li class="zh-cur"><a href="###">'+i+'</a></li>';
+                            } else {
+                                li += '<li><a href="###">'+i+'</a></li>';
+                            }
+                        }
+                    } else { // 不能连到结束
+                        li += '<li><a href="###">1</a></li>';
+                        li += '<li class="zh-ellipsis">...</li>';
+                        for(var i=curPage-(opts.visiblePages-4); i<=curPage+1; i++) {
+                            if(curPage == i) {
+                                li += '<li class="zh-cur"><a href="###">'+i+'</a></li>';
+                            } else {
+                                li += '<li><a href="###">'+i+'</a></li>';
+                            }
+                        }
+                        li += '<li class="zh-ellipsis">...</li>';
+                        li += '<li><a href="###">'+opts.totalPages+'</a></li>';
+                    }
+                }
+            }
+            li += '<li class="zh-next"><a href="###"><span class="zh-icon-next"></span></a></li>';
+            li += '<li class="zh-total">共'+opts.totalPages+'页</li>';
+            $(opts.ele).html(li);
+        }
+        createPageList(curPage);
+        // 点击页码
+        $(opts.ele).off('click');
+        $(opts.ele).on('click', 'li:not(.zh-prev, .zh-next, .zh-total, .zh-ellipsis)', function() {
+            curPage = +$(this).text();
+            $(this).addClass('zh-cur').siblings().removeClass('zh-cur');
+            createPageList(curPage);
+            if(opts.change && typeof opts.change === 'function') {
+                opts.change.call(null, curPage);
+            }
+        });
+        // 点击前一页
+        $(opts.ele).on('click', '.zh-prev', function() {
+            curPage = +$(opts.ele).children('.zh-cur').text();
+            curPage--;
+            if(curPage < 1) return;
+            createPageList(curPage);
+            if(opts.change && typeof opts.change === 'function') {
+                opts.change.call(null, curPage);
+            }
+        });
+        // 点击后一页
+        $(opts.ele).on('click', '.zh-next', function() {
+            curPage = +$(opts.ele).children('.zh-cur').text();
+            curPage++;
+            if(curPage > opts.totalPages) return;
+            createPageList(curPage);
+            if(opts.change && typeof opts.change === 'function') {
+                opts.change.call(null, curPage);
+            }
+        });
+    }
+});
+$.page({
+    ele: '.zh-page ul',
+    curPage: 1, // 当前页
+    visiblePages: 5, // 可见页码
+    change: function(num) { // 回调
+        // alert(num);
+    },
+    totalPages: 20 // 总页数
+});
+            </script>
+</body>
+</html>

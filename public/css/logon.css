@@ -1,0 +1,169 @@
+body{
+    margin:0;
+    padding:0;
+    background-color:white;
+}
+
+
+.login_banner{
+    width:100%;
+    overflow: hidden;
+    
+}
+.login_banner .login_bg{
+    width:1200px;
+    height:500px;
+    margin:0 auto;
+    /* border:1px solid red; */
+    box-sizing: border-box;
+    padding-top:10px;
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center; */
+    overflow: hidden;
+
+
+}
+.login_bg .app_ewm{
+    float: left;
+    background-color:white;  
+    margin-top:100px;
+    margin-left:50px;
+}
+.login_bg .app_ewm img{
+    width:200px;
+    height:200px;
+}
+.login_bg .app_ewm p{
+    text-align: center;
+}
+.login_banner .login_bg .login_from{
+    width:346px;
+    border:1px solid #B1B1B1;
+    background-color:white;
+    float:right;
+    margin-top:30px;
+    margin-right:50px;
+}
+.login_from .tips_wrapper{
+    width:100%;
+    background-color:#FFF8F0;
+    padding:15px;
+    box-sizing: border-box;
+}
+.login_from .tips_wrapper p{
+    font-size:13px;
+    margin:0;
+    text-align: center;
+    color:#999999;
+}
+.login_from .login_tite{
+    display: flex;
+}
+.login_from .qrcode_login{
+    width:100%;
+    padding-bottom:20px;
+}
+.login_from .qrcode_login .qrcode_img{
+    text-align: center;
+}
+.login_from .qrcode_login .qrcode_img img{
+    width:147px;
+    height:147px;
+    margin-top:50px;
+}
+.login_from .qrcode_login  ul{
+    list-style: none;
+    padding:0;
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; */
+    width:65%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.login_from .qrcode_login  ul li{
+    /* display: flex;
+    align-items: center; */
+    width:33.33%;
+    font-size:13px;
+    color:#999999;
+    float:left;
+}
+.login_from .qrcode_login  ul img{
+    vertical-align: middle;
+    width:20px;
+    height:20px;
+    margin:0 5px;
+}
+.qrcode_login p{
+    text-align: center;
+    font-size:15px;
+}
+.formlogin .login-btn{
+    margin-top:20px;
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    background-color:red; 
+    text-align:center;
+
+}
+.formlogin .rem_pw{
+    margin-top:10px;
+    display: block;
+    width:100%;
+ text-align: right;
+ color:666666;
+ text-decoration: none;
+}
+.formlogin .rem_pw:hover{
+    color:red;
+    text-decoration: underline;
+}
+.formlogin .login-btn a{
+    text-decoration: none;
+    color:white;
+    font-size:30px;
+    font-weight: bold;
+}
+.login_tab{
+    width:50%;
+    height:55px;
+    line-height:55px;
+    text-align:center;
+    font-size:18px;
+    color:#666666;
+    border-bottom:1px solid #F4F4F4;
+    float:left;
+}
+.login_tab:hover{
+    color:red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.login_from .formlogin{
+    padding:20px;
+    box-sizing: border-box;
+    display: none;
+}
+.login_from .formlogin input{
+    width:100%;
+    padding:10px 0;
+   padding-left:50px;
+   margin-top:20px;
+   box-sizing: border-box;
+   color:#B1B1B1;
+}
+.login_from .coagent{
+    width:100%;
+    padding:0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.login_from .coagent .zuce{
+    color:red;
+}
